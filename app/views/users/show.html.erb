@@ -1,7 +1,7 @@
 <div class="clearfix top-space small"></div>
 <div class="row">
 
-  <%= render :partial => 'shared/left_nav' %>
+  <%= render :partial => 'shared/left_nav_user' %>
 
   <div class="panel panel-default col-md-8 text-left">
     <div class="pull-left">
@@ -10,9 +10,9 @@
     <div class="clearfix"></div>
     <hr />
     <ol class="list-unstyled">
-      <% @twets.each do |twet| -%>
+      <% @user.twets.each do |twet| -%>
       <li>
-        <%= content_tag :strong, link_to(twet.user.name, user_profile_path(twet.user.username)), :class => 'pull-left text-middle' %>
+        <%= content_tag :strong, twet.user.name, :class => 'pull-left text-middle' %>
         <%= content_tag :small, "@"+twet.user.username, :class => 'text-muted pad-10 text-middle' %>
         <%= content_tag :small, twet.created_at.strftime("%b %-d"), :class => 'text-muted text-middle pull-right' %>
         <div class="clearfix"></div>
@@ -23,4 +23,3 @@
     </ol>
   </div>
 </div>
-

@@ -1,7 +1,7 @@
 <div class="col-md-4">
   <ul class="nav nav-pills nav-stacked well text-left">
     <li>
-      <%= content_tag :strong, current_user.name %>
+      <%= content_tag :strong, link_to(current_user.name, user_profile_path(current_user.username)) %>
     </li>
     <li>
       <%= content_tag :small, '@'+current_user.username %>

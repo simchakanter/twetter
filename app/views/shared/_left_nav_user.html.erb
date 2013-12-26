@@ -1,0 +1,37 @@
+<div class="col-md-4">
+  <ul class="nav nav-pills nav-stacked well text-left">
+    <li>
+      <%= content_tag :strong, @user.name %>
+    </li>
+    <li>
+      <%= content_tag :small, '@'+@user.username %>
+    </li>
+    <li>
+      <table class="table table-bordered stats">
+        <tbody>
+          <tr>
+            <td>
+              <%= content_tag :h4, @user.twets.count %>
+              <%= content_tag :small, 'Twets', :class => "uppercase lighter" %>
+            </td>
+            <td>
+              <%= content_tag :h4, @user.follows.count %>
+              <%= content_tag :small, 'Following', :class => "uppercase lighter" %>
+            </td>
+            <td>
+              <%= content_tag :h4, Follow.where(:following_id => current_user.id).count %>
+              <%= content_tag :small, 'Followers', :class => "uppercase lighter" %>
+            </td>
+        </tbody>
+      </table>
+    </li>
+    <li>
+      <%= follow_link(@user) %>
+    </li>
+  </ul>
+
+  <ul class="nav nav-pills nav-stacked well">
+    <%= nav_item("Follow", follows_path) %>
+    <%= nav_item("Twet", twets_path) %>
+  </ul>
+</div>
