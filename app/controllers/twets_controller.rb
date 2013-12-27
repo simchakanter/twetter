@@ -52,6 +52,6 @@ class TwetsController < ApplicationController
   # a 400 'Bad Request' HTML response code.
   #
   def twet_params
-    params.require(:twet).permit(:content)
+    params.require(:twet).permit(:content, :parent_id)
   end
 end

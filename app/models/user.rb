@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   has_many :follows
   has_many :twets
+  has_many :retwets, through: :twets
+  has_many :parents, through: :twets
 
   validates :name, :presence => true
   validates :username, :presence => true, :uniqueness => true

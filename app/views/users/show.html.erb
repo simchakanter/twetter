@@ -10,16 +10,9 @@
     <div class="clearfix"></div>
     <hr />
     <ol class="list-unstyled">
-      <% @user.twets.each do |twet| -%>
-      <li>
-        <%= content_tag :strong, twet.user.name, :class => 'pull-left text-middle' %>
-        <%= content_tag :small, "@"+twet.user.username, :class => 'text-muted pad-10 text-middle' %>
-        <%= content_tag :small, twet.created_at.strftime("%b %-d"), :class => 'text-muted text-middle pull-right' %>
-        <div class="clearfix"></div>
-        <%= content_tag :p, twet.content.gsub(/@(?<username>(\w+))/,'<a href="'+'\k<username>'+'">@\k<username></a>').html_safe%>
-      </li>
-      <li><hr></li>
-      <% end -%>
+    <% @user.twets.order(created_at: :desc).each do |twet| -%>
+      <%= render partial: "shared/twet", locals: {twet: twet} %>
+    <% end -%>
     </ol>
   </div>
 </div>

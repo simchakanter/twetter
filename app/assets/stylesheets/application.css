@@ -12,3 +12,11 @@
  *= require bootstrap
  *= require_tree .
  */
+
+ .retwet-submit {
+  border: none;
+  background-color: rgb(66, 139,202);
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+ }

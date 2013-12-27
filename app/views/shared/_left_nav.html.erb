@@ -11,7 +11,8 @@
         <tbody>
           <tr>
             <td>
-              <%= content_tag :h4, current_user.twets.count %>
+              <!-- Need to add both twets and retwets - need to test parent reference with two different retwets to see if count is right -->
+              <%= content_tag :h4, current_user.twets.count + current_user.parents.count %>
               <%= content_tag :small, 'Twets', :class => "uppercase lighter" %>
             </td>
             <td>
