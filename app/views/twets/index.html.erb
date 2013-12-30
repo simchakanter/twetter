@@ -10,11 +10,13 @@
     <div class="clearfix"></div>
     <hr />
     <ol class="list-unstyled">
+
       <% @twets.each do |twet| -%>
 
         <%= render partial: "shared/twet", locals: {twet: twet} %>
         
       <% end -%>
+
     </ol>
   </div>
 </div>

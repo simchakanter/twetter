@@ -1,6 +1,7 @@
 <div class="col-md-4">
-  <ul class="nav nav-pills nav-stacked well text-left">
+  <ul class="nav nav-stacked well text-left">
     <li>
+      <%= content_tag :p, image_tag(gravatar(current_user), :class => 'img-rounded'), :style => 'width: 60px;' %>
       <%= content_tag :strong, link_to(current_user.name, user_profile_path(current_user.username)) %>
     </li>
     <li>
@@ -23,6 +24,7 @@
               <%= content_tag :h4, Follow.where(:following_id => current_user.id).count %>
               <%= content_tag :small, 'Followers', :class => "uppercase lighter" %>
             </td>
+          </tr>
         </tbody>
       </table>
     </li>

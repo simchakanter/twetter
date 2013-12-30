@@ -1,5 +1,6 @@
 
 <li>
+  <%= content_tag :p, image_tag(gravatar(twet.user), :class => 'img-rounded'), :style => 'width: 60px;' %>
   <%= content_tag :strong, link_to(twet.user.name, user_profile_path(twet.user.username)), :class => 'pull-left text-middle' %>
   <%= content_tag :small, "@"+twet.user.username, :class => 'text-muted pad-10 text-middle' %>
   <% unless twet.user_id == current_user.id %>
